@@ -1,3 +1,13 @@
+Write-Host  -ForegroundColor Cyan "Starting OSDCloud for Windows 10 22h2 sv-se (Transtema)..."
+Start-Sleep -Seconds 5
+
+#Make sure I have the latest OSD Content
+Write-Host  -ForegroundColor Cyan "Updating OSDCloud PowerShell Module"
+Install-Module OSD -Force
+
+Write-Host  -ForegroundColor Cyan "Importing OSDCloud PowerShell Module"
+Import-Module OSD -Force
+
 #Variables to define the Windows OS / Edition etc to be applied during OSDCloud
 $OSVersion = 'Windows 10' #Used to Determine Driver Pack
 $OSReleaseID = '22H2' #Used to Determine Driver Pack

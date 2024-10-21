@@ -9,9 +9,9 @@ Write-Host  -ForegroundColor Cyan "Importing OSDCloud PowerShell Module"
 Import-Module OSD -Force
 
 #Variables to define the Windows OS / Edition etc to be applied during OSDCloud
-$OSVersion = 'Windows 10' #Used to Determine Driver Pack
-$OSReleaseID = '22H2' #Used to Determine Driver Pack
-$OSName = 'Windows 10 22H2 x64'
+$OSVersion = 'Windows 11' #Used to Determine Driver Pack
+$OSReleaseID = '23H2' #Used to Determine Driver Pack
+$OSName = 'Windows 11 23H2 x64'
 $OSEdition = 'Enterprise'
 $OSActivation = 'Volume'
 $OSLanguage = 'sv-se'

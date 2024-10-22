@@ -1,4 +1,4 @@
-Write-Host  -ForegroundColor Cyan "Starting OSDCloud for Windows 11 22h2 sv-se (Transtema)..."
+Write-Host  -ForegroundColor Cyan "Starting OSDCloud for Windows 10 22h2 sv-se (Transtema)..."
 Start-Sleep -Seconds 5
 
 #Make sure I have the latest OSD Content
@@ -53,7 +53,7 @@ write-host "Start-OSDCloud -OSName $OSName -OSEdition $OSEdition -OSActivation $
 
 #Start-OSDCloud -OSName $OSName -OSEdition $OSEdition -OSActivation $OSActivation -OSLanguage $OSLanguage
 Write-Host  -ForegroundColor Cyan "Starting OSDCloud with Windows 10 22h2 sv-se"
-Start-OSDCloud -OSVersion 'Windows 11' -OSLanguage sv-se -OSBuild 23H2 -OSEdition Enterprise -ZTI
+Start-OSDCloud -OSVersion 'Windows 10' -OSLanguage sv-se -OSBuild 22H2 -OSEdition Enterprise -ZTI
 
 #Restart from WinPE
 Write-Host  -ForegroundColor Cyan "Restarting in 20 seconds!"

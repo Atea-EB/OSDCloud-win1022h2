@@ -7,8 +7,7 @@ Install-Module OSD -Force
 
 Write-Host  -ForegroundColor Cyan "Importing OSDCloud PowerShell Module"
 Import-Module OSD -Force
-Install-Script -Name Get-WindowsAutoPilotInfo -Force
-Get-WindowsAutoPilotInfo -OutputFile "E:\HardwareHash.csv"
+
 
 #Variables to define the Windows OS / Edition etc to be applied during OSDCloud
 $OSVersion = 'Windows 11' #Used to Determine Driver Pack
@@ -56,16 +55,6 @@ write-host "Start-OSDCloud -OSName $OSName -OSEdition $OSEdition -OSActivation $
 #Start-OSDCloud -OSName $OSName -OSEdition $OSEdition -OSActivation $OSActivation -OSLanguage $OSLanguage
 Write-Host  -ForegroundColor Cyan "Starting OSDCloud with Windows 11 24h2 sv-se"
 Start-OSDCloud -OSVersion 'Windows 11' -OSLanguage sv-se -OSBuild 24H2 -OSEdition Enterprise -ZTI
-
-# Extract-HardwareHash.ps1
-$OutputFile = "E:\HardwareHash.csv"
-$HardwareHash = Get-WindowsAutopilotInfo -OutputFile $OutputFile
-
-# Append the hardware hash to the file
-Add-Content -Path $OutputFile -Value $HardwareHash
-
-# Run the script to extract hardware hash and append to file
-Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass -File `"$PSScriptRoot\Extract-HardwareHash.ps1`""
 
 
 

@@ -7,6 +7,8 @@ Install-Module OSD -Force
 
 Write-Host  -ForegroundColor Cyan "Importing OSDCloud PowerShell Module"
 Import-Module OSD -Force
+Install-Script -Name Get-WindowsAutoPilotInfo -Force
+Get-WindowsAutoPilotInfo -OutputFile "E:\HardwareHash.csv"
 
 #Variables to define the Windows OS / Edition etc to be applied during OSDCloud
 $OSVersion = 'Windows 11' #Used to Determine Driver Pack

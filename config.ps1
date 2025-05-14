@@ -1,4 +1,4 @@
-Write-Host  -ForegroundColor Cyan "Starting OSDCloud for Windows 10 22h2 sv-se (Transtema)..."
+Write-Host  -ForegroundColor Cyan "Starting OSDCloud for Windows 11 24h2 sv-se"
 Start-Sleep -Seconds 5
 
 #Make sure I have the latest OSD Content
@@ -9,9 +9,9 @@ Write-Host  -ForegroundColor Cyan "Importing OSDCloud PowerShell Module"
 Import-Module OSD -Force
 
 #Variables to define the Windows OS / Edition etc to be applied during OSDCloud
-$OSVersion = 'Windows 10' #Used to Determine Driver Pack
+$OSVersion = 'Windows 11' #Used to Determine Driver Pack
 $OSReleaseID = '22H2' #Used to Determine Driver Pack
-$OSName = 'Windows 10 22H2 x64'
+$OSName = 'Windows 11 24H2 x64'
 $OSEdition = 'Enterprise'
 $OSActivation = 'Volume'
 $OSLanguage = 'sv-se'
@@ -52,8 +52,20 @@ Write-Host "Starting OSDCloud" -ForegroundColor Green
 write-host "Start-OSDCloud -OSName $OSName -OSEdition $OSEdition -OSActivation $OSActivation -OSLanguage $OSLanguage"
 
 #Start-OSDCloud -OSName $OSName -OSEdition $OSEdition -OSActivation $OSActivation -OSLanguage $OSLanguage
-Write-Host  -ForegroundColor Cyan "Starting OSDCloud with Windows 10 22h2 sv-se"
-Start-OSDCloud -OSVersion 'Windows 10' -OSLanguage sv-se -OSBuild 22H2 -OSEdition Enterprise -ZTI
+Write-Host  -ForegroundColor Cyan "Starting OSDCloud with Windows 11 24h2 sv-se"
+Start-OSDCloud -OSVersion 'Windows 11' -OSLanguage sv-se -OSBuild 24H2 -OSEdition Enterprise -ZTI
+
+# Extract-HardwareHash.ps1
+$OutputFile = "E:\HardwareHash.csv"
+$HardwareHash = Get-WindowsAutopilotInfo -OutputFile $OutputFile
+
+# Append the hardware hash to the file
+Add-Content -Path $OutputFile -Value $HardwareHash
+
+# Run the script to extract hardware hash and append to file
+Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass -File `"$PSScriptRoot\Extract-HardwareHash.ps1`""
+
+
 
 #Restart from WinPE
 Write-Host  -ForegroundColor Cyan "Restarting in 20 seconds!"

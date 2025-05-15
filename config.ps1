@@ -10,7 +10,7 @@ Import-Module OSD -Force
 
 
 #Variables to define the Windows OS / Edition etc to be applied during OSDCloud
-$OSVersion = 'Windows 10' #Used to Determine Driver Pack
+$OSVersion = 'Windows 11' #Used to Determine Driver Pack
 $OSReleaseID = '24H2' #Used to Determine Driver Pack
 $OSName = 'Windows 11 24H2 x64'
 $OSEdition = 'Enterprise'
@@ -83,8 +83,7 @@ write-host "Start-OSDCloud -OSName $OSName -OSEdition $OSEdition -OSActivation $
 
 #Start-OSDCloud -OSName $OSName -OSEdition $OSEdition -OSActivation $OSActivation -OSLanguage $OSLanguage
 Write-Host  -ForegroundColor Cyan "Starting OSDCloud with Windows 11 24h2 sv-se"
-Start-OSDCloud -OSVersion 'Windows 11' -OSLanguage sv-se -OSBuild 24H2 -OSEdition Pro 
-#-ZTI
+Start-OSDCloud -OSVersion 'Windows 11' -OSLanguage sv-se -OSBuild 24H2 -OSEdition Pro -ZTI
 
 #Hardware Hash
 

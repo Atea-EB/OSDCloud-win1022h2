@@ -22,7 +22,6 @@ $Product = (Get-MyComputerProduct)
 $DriverPack = Get-OSDCloudDriverPack -Product $Product -OSVersion $OSVersion -OSReleaseID $OSReleaseID
 
 #Set OSDCloud Vars
-$Global:OSDCloud = $null
 $Global:MyOSDCloud = [ordered]@{
 AutopilotJsonChildItem = $null
 AutopilotJsonItem = $null

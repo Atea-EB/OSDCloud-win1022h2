@@ -22,7 +22,27 @@ $Product = (Get-MyComputerProduct)
 $DriverPack = Get-OSDCloudDriverPack -Product $Product -OSVersion $OSVersion -OSReleaseID $OSReleaseID
 
 #Set OSDCloud Vars
+$Global:OSDCloud = $null
 $Global:MyOSDCloud = [ordered]@{
+AutopilotJsonChildItem = $null
+AutopilotJsonItem = $null
+AutopilotJsonName = $null
+AutopilotJsonObject = $null
+AutopilotJsonString = $null
+AutopilotJsonUrl = $null
+AutopilotOOBEJsonChildItem = $null
+AutopilotOOBEJsonItem = $null
+AutopilotOOBEJsonName = $null
+AutopilotOOBEJsonObject = $null
+OOBEDeployJsonChildItem = $null
+OOBEDeployJsonItem = $null
+OOBEDeployJsonName = $null
+OOBEDeployJsonObject = $null
+OSLicense = $null
+TSAutopilotConfig = $null
+TSProvisioning = $null
+TSScriptStartup = $null
+TSScriptShutdown = $null
 Restart = [bool]$false
 RecoveryPartition = [bool]$true
 OEMActivation = [bool]$false

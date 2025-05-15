@@ -23,14 +23,24 @@ $DriverPack = Get-OSDCloudDriverPack -Product $Product -OSVersion $OSVersion -OS
 
 #Set OSDCloud Vars
 $Global:MyOSDCloud = [ordered]@{
-Restart = [bool]$False
+Restart = [bool]$false
 RecoveryPartition = [bool]$true
-OEMActivation = [bool]$False
+OEMActivation = [bool]$false
 WindowsUpdate = [bool]$true
 WindowsUpdateDrivers = [bool]$true
 WindowsDefenderUpdate = [bool]$true
 SetTimeZone = [bool]$True
-ClearDiskConfirm = [bool]$False
+ClearDiskConfirm = [bool]$false
+SkipAllDiskSteps = [bool]$false
+SkipAutopilot = [bool]$false
+SkipAutopilotOOBE = [bool]$false
+SkipClearDisk = [bool]$false
+SkipODT = [bool]$false
+SkipOOBEDeploy = [bool]$false
+SkipNewOSDisk = [bool]$false
+SkipRecoveryPartition = [bool]$false
+BuildName = 'OSDCloud'
+ZTI = [bool]$true
 }
 
 if ($DriverPack){
@@ -46,7 +56,7 @@ $Global:MyOSDCloud.DriverPackName = $DriverPack.Name
 #}
 
 #write variables to console
-#$Global:MyOSDCloud
+$Global:MyOSDCloud
 
 #Launch OSDCloud
 Write-Host "Starting OSDCloud" -ForegroundColor Green

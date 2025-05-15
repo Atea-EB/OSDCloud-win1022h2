@@ -38,15 +38,15 @@ $Global:MyOSDCloud.DriverPackName = $DriverPack.Name
 }
 
 #Enable HPIA | Update HP BIOS | Update HP TPM
-if (Test-HPIASupport){
+#if (Test-HPIASupport){
 #$Global:MyOSDCloud.DevMode = [bool]$True
-$Global:MyOSDCloud.HPTPMUpdate = [bool]$True
-$Global:MyOSDCloud.HPIAALL = [bool]$true
-$Global:MyOSDCloud.HPBIOSUpdate = [bool]$true
-}
+#$Global:MyOSDCloud.HPTPMUpdate = [bool]$True
+#$Global:MyOSDCloud.HPIAALL = [bool]$true
+#$Global:MyOSDCloud.HPBIOSUpdate = [bool]$true
+#}
 
 #write variables to console
-$Global:MyOSDCloud
+#$Global:MyOSDCloud
 
 #Launch OSDCloud
 Write-Host "Starting OSDCloud" -ForegroundColor Green

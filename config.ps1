@@ -1,4 +1,4 @@
-Write-Host  -ForegroundColor Cyan "Starting OSDCloud for Windows 11 24h2 sv-se"
+Write-Host  -ForegroundColor Cyan "Starting OSDCloud for Windows 10 22h2 sv-se"
 Start-Sleep -Seconds 5
 
 #Make sure I have the latest OSD Content
@@ -10,9 +10,9 @@ Import-Module OSD -Force
 
 
 #Variables to define the Windows OS / Edition etc to be applied during OSDCloud
-$OSVersion = 'Windows 11' #Used to Determine Driver Pack
+$OSVersion = 'Windows 10' #Used to Determine Driver Pack
 $OSReleaseID = '22H2' #Used to Determine Driver Pack
-$OSName = 'Windows 11 24H2 x64'
+$OSName = 'Windows 10 22H2 x64'
 $OSEdition = 'Enterprise'
 $OSActivation = 'Volume'
 $OSLanguage = 'sv-se'
